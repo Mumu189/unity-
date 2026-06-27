@@ -8,13 +8,13 @@ public Vector3 rotationTarget;
 transform.Translate //让游戏物体沿指定方向移动
 
 Application.targetFrameRate = 60;//设置游戏帧数
-ebug.Log("缩放为:" + go.transform.rotation.eulerAngles);//控制台输出内容
+Debug.Log("缩放为:" + go.transform.rotation.eulerAngles);//控制台输出内容
 
 go.transform.Translate(positionTarget * Time.deltaTime);//设置物体位置
 go.transform.Rotate(rotationTarget * Time.deltaTime);//设置物体旋转
 go.transform.position = go.transform.position + positionTarget;//设置物体位置
 go.transform.eulerAngles = go.transform.eulerAngles + rotationTarget;//设置物体旋转(不受90°限制)
-go.transform.Rotate(rotationTarget * Time.deltaTime,Space.World);//设置物体位置(基于世界)
+go.transform.Translate(rotationTarget * Time.deltaTime,Space.World);//设置物体位置(基于世界)
 go.transform.Rotate(rotationTarget * Time.deltaTime,Space.World);设置物体旋转(基于世界)
 Destroy(go);//将指定内容清除
 
